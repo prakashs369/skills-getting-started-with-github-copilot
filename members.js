@@ -18,7 +18,7 @@ const members = [
  * @returns {object|null} - The member object or null if not found
  */
 function findMemberByName(name) {
-  // TODO: Use Copilot to implement this function
+  return members.find(member => member.name.toLowerCase() === name.toLowerCase()) || null;
 }
 
 /**
@@ -27,7 +27,7 @@ function findMemberByName(name) {
  * @returns {array} - Array of members with the specified role
  */
 function filterMembersByRole(role) {
-  // TODO: Use Copilot to implement this function
+  return members.filter(member => member.role.toLowerCase() === role.toLowerCase());
 }
 
 /**
@@ -35,7 +35,7 @@ function filterMembersByRole(role) {
  * @returns {array} - Array of all member names
  */
 function getAllMemberNames() {
-  // TODO: Use Copilot to implement this function
+  return members.map(member => member.name);
 }
 
 /**
@@ -43,7 +43,8 @@ function getAllMemberNames() {
  * @returns {number} - The average age
  */
 function getAverageAge() {
-  // TODO: Use Copilot to implement this function
+  const totalAge = members.reduce((sum, member) => sum + member.age, 0);
+  return members.length > 0 ? totalAge / members.length : 0;
 }
 
 // Export functions for use in other modules
